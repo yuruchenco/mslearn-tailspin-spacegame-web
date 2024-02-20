@@ -10,12 +10,20 @@
 trigger:
 - main
 
-pool:
-vmImage: ubuntu-latest
-
 variables:
-buildConfiguration: 'Release'
+  buildConfiguration: 'Release'
 
 steps:
-- script: dotnet.build -- configuration $(buildConfiguration)
-displayName: 'dotnet build $(buildConfiguration)'
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'ME-MngEnvMCAP541339-yuichimasuda-1(7fd24fa5-b36e-4da0-bb40-2cd734d5fb2b)'
+    appType: 'webApp'
+    appName: 'yuichimasuda-webapp'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
