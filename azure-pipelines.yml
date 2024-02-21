@@ -27,3 +27,10 @@ steps:
     appName: 'yuichimasuda-webapp'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     deploymentMethod: 'auto'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'ME-MngEnvMCAP541339-yuichimasuda-1(7fd24fa5-b36e-4da0-bb40-2cd734d5fb2b)'
+    appType: 'webApp'
+    WebAppName: 'app-AzureDevOpsDemo'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
