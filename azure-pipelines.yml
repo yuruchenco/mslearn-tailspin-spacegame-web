@@ -1,5 +1,5 @@
-pool:
-  name: 'default'
+#pool:
+#  name: 'default'
 
 # ASP.NET.Core
 # Build and.test.ASP.NET.Core projects.targeting .. NET.Core.
