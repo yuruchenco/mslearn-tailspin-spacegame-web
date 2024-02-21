@@ -1,6 +1,5 @@
-# pool: MyAgentPool
-# steps:
-# - bash: echo hello world
+pool:
+  name: 'default'
 
 # ASP.NET.Core
 # Build and.test.ASP.NET.Core projects.targeting .. NET.Core.
