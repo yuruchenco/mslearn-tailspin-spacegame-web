@@ -1,3 +1,5 @@
+pool:
+  name: 'self-hosted agent pool'
 
 # ASP.NET.Core
 # Build and.test.ASP.NET.Core projects.targeting .. NET.Core.
